@@ -1,0 +1,524 @@
+:root {
+    --bg-deep: #050816;
+    --neon-cyan: #00F5FF;
+    --neon-purple: #8B5CF6;
+    --text-main: #E5E7EB;
+    --font-cyber: 'Segoe UI', -apple-system, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: none !important; /* Yeh line aapke native mouse browser cursor ko hide kar degi */
+}
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: var(--font-cyber);
+    overflow-x: hidden;
+    background-image: 
+        linear-gradient(rgba(0, 245, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+}
+.panel {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10%;
+    position: relative;
+}
+.hero-content {
+    text-align: center;
+    max-width: 850px;
+}
+
+.cyber-badge {
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+.gradient-text {
+    background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--neon-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Neon shadow box drop */
+    filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.3));
+}
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-cyber {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    padding: 15px 35px;
+    font-size: 0.85rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cta-cyber:hover {
+    background: var(--neon-cyan);
+    color: var(--bg-deep);
+    box-shadow: 0 0 30px var(--neon-cyan);
+    transform: scale(1.03);
+}
+.transform-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+/* Left Display Box: Glassmorphism frame with a cyan dashed border */
+.morph-viewport {
+    height: 380px;
+    background: rgba(17, 24, 39, 0.4);
+    border: 1px dashed rgba(0, 245, 255, 0.3);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.view-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 0.7rem;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}
+
+.wireframe-placeholder {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+/* Moving Cyber Scanner Line Animation */
+.hud-scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    box-shadow: 0 0 10px var(--neon-cyan);
+    animation: scanMoving 3s linear infinite;
+}
+
+@keyframes scanMoving {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+/* Right Side Copywriting Layout */
+.transform-text-box .step-label {
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+    letter-spacing: 3px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.transform-text-box h2 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.transform-text-box p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+/* Mobile Breakpoint Fixes */
+@media (max-width: 768px) {
+    .transform-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .transform-text-box h2 {
+        font-size: 1.8rem;
+    }
+}
+/* ==========================================================================
+   4. SECTION 3: NEURAL CORE MODULES MATRIX
+   ========================================================================== */
+.core-container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    /* Soft cyber text shadow */
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+/* Fluid responsive grid layout using auto-fit */
+.grid-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* Semi-transparent Glass Container */
+.cyber-card {
+    background: rgba(17, 24, 39, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 245, 255, 0.12);
+    padding: 35px 25px;
+    position: relative;
+    overflow: hidden;
+    /* Smooth movement transition */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-id {
+    font-size: 0.7rem;
+    color: var(--neon-purple);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.cyber-card h3 {
+    font-size: 1.3rem;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.cyber-card p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+
+/* Premium Interactive States */
+.cyber-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-cyan);
+    background: rgba(17, 24, 39, 0.6);
+    /* Soft cyber drop shadow glow on hover */
+    box-shadow: 0 12px 30px rgba(0, 245, 255, 0.1);
+}
+/* ==========================================================================
+   5. SECTION 4: EVOLUTIONARY TIMELINE PATH
+   ========================================================================== */
+.timeline-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.timeline-track {
+    position: relative;
+    padding-left: 35px; /* Space for the vertical line */
+}
+
+/* The vertical cyber track line running down */
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple), transparent);
+}
+
+.timeline-node {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-node:last-child {
+    margin-bottom: 0;
+}
+
+/* The structural dot attached to the timeline line */
+.node-indicator {
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg-deep);
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-cyan);
+    z-index: 2;
+}
+
+/* Individual Node Glass Card Box */
+.node-content {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.node-content:hover {
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.node-meta {
+    font-size: 0.75rem;
+    color: var(--neon-purple);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.node-content h4 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.node-content p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.5;
+}
+/* ==========================================================================
+   6. SECTION 5: POWER STATISTICS COUNTERS
+   ========================================================================== */
+.stats-container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* 4-column auto alignment layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    text-align: center;
+}
+
+.stat-box {
+    position: relative;
+}
+
+/* Giant Bold Numbers base setup */
+.stat-number {
+    display: block;
+    font-size: 3.6rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+    font-family: Arial, Helvetica, sans-serif; /* Clean industrial geometric font */
+}
+
+/* Color Palette Glow Masks */
+.cyan-glow {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+}
+
+.purple-glow {
+    color: var(--neon-purple);
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.green-glow {
+    color: var(--neon-green);
+    text-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+}
+
+/* Text Meta Label Style */
+.stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+/* ==========================================================================
+   7. SECTION 6: LINUX INTERACTIVE TERMINAL
+   ========================================================================== */
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* Deep charcoal backing layer for contrast */
+.terminal-window {
+    background: #090c15;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Top bar with buttons arrangement */
+.terminal-header {
+    background: #111625;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.terminal-title {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+/* Internal body logs */
+.terminal-body {
+    padding: 25px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.success-cyan {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+}
+
+/* Auto blinking prompt terminal line */
+.cursor-blink {
+    color: var(--neon-purple);
+    animation: promptBlinker 1s step-end infinite;
+}
+
+@keyframes promptBlinker {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+/* ==========================================================================
+   8. SECTION 7: FINAL CALL TO ACTION
+   ========================================================================== */
+#cta {
+    background-color: #03050d; /* Darkest layer shift to end the scroll */
+    text-align: center;
+}
+
+.cta-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    padding: 60px 20px;
+    z-index: 2;
+}
+
+/* Backing cosmic neon glow beam spot */
+.cta-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.cta-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.cta-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.5);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    line-height: 1.5;
+}
+
+/* Heavy sizing modifier for the final conversion button */
+.cta-massive {
+    padding: 18px 45px;
+    font-size: 0.95rem;
+    border-color: var(--neon-purple);
+    color: #fff;
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.cta-massive:hover {
+    background: var(--neon-purple);
+    color: #fff;
+    box-shadow: 0 0 40px var(--neon-purple);
+}
+
+/* Final Polish: Universal Responsive Typography adjustments */
+@media (max-width: 768px) {
+    .cta-title {
+        font-size: 2.2rem;
+    }
+    .cta-desc {
+        font-size: 0.95rem;
+    }
+}
